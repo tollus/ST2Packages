@@ -1,0 +1,4 @@
+{
+	// The path to the TortoiseSVN TortoiseProc.exe executable
+	"svn_tortoiseproc_path": "C:\\Program Files\\TortoiseSVN\\bin\\TortoiseProc.exe"
+}
