@@ -1,22 +1,29 @@
 [
 	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-   	{ "keys": ["ctrl+b"], "command": "insert_snippet", "args": {"name": "Packages/User/Snippets/Html/strong.sublime-snippet"}, "context":
-	   [
-	      { "key": "selector", "operator": "equal", "operand": "text.html" }
-	   ]},
    { "keys": ["alt+w"], "command": "toggle_setting",
 	    "args": { "setting": "word_wrap" } },
 
-	    /****** COLDFUSION KEYS ******/
+	    /****** HTML SNIPPETS ******/
 
-	{ "keys": ["alt+shift+e"], "command": "insert_snippet",
-		"args": {"name": "Packages/User/Snippets/Coldfusion/htmleditformat.sublime-snippet"}, "context":
-	   	[
+	{
+		"keys": ["ctrl+b"], "command": "insert_snippet",
+		"args": {"contents": "<strong>$SELECTION<\/strong>$0"},
+		"context": [
 	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
 	   	]},
-	{ "keys": ["alt+shift+c"], "command": "insert_snippet",
-		"args": {"name": "Packages/User/Snippets/Coldfusion/convert_tag_to_module.sublime-snippet"}, "context":
-	   	[
+
+	    /****** COLDFUSION SNIPPETS ******/
+
+	{
+		"keys": ["alt+shift+e"], "command": "insert_snippet",
+		"args": {"contents": "HtmlEditFormat(${0:$SELECTION})"},
+		"context": [
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{
+		"keys": ["alt+shift+c"], "command": "insert_snippet",
+		"args": {"contents": "cfmodule template=\"$0$SELECTION.cfm\""},
+		"context": [
 	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" },
        		{ "key": "selection_empty", "operator": "equal", "operand": false }
 	   	]}
