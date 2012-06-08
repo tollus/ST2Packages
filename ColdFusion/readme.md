@@ -1,7 +1,7 @@
 # ColdFusion Package for Sublime Text 2
 
 ### What's New
-* Added Command ```ColdFusion: Insert UDF``` (6/2/12)
+* Added Command ```ColdFusion: Insert CFlib UDF``` (6/2/12)
 
 ### Features
 
@@ -36,6 +36,11 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 ## Key bindings
 
+Some packages will override key bindings. If you have problems with a specific key shortcut,
+you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
+
+You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses.
+
 <table>
     <tr>
         <td>
@@ -50,15 +55,15 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
         </td>
     </tr>
     <tr>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
         </td>
     </tr>
     <tr>
@@ -79,18 +84,6 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
     </tr>
 </table>
 
-###### Overridden Sublime Key bindings
-
-<table>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>duplicate line</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>expand selection to tag</code>
-        </td>
-    </tr>
-</table>
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
@@ -117,17 +110,18 @@ To install snippets just put the ```.sublime-snippet``` files in your Packages/U
 ##Additional Packages
 Some additional packages you might want to check out (these packages are all available through Package Control):
 
-* https://github.com/BoundInCode/AutoFileName
-* https://github.com/weslly/ColorPicker
-* https://github.com/xobb1t/Sublime-AdvancedNewFile
-* https://github.com/kemayo/sublime-text-2-git
-* https://github.com/dz0ny/LiveReload-sublimetext2
-* https://github.com/bgreenlee/sublime-github
-* https://github.com/virtix/sublime-text-2-mxunit
+* https://github.com/BoundInCode/AutoFileName (provides file auto-complete)
+* https://github.com/weslly/ColorPicker (choose a color and get the hex code)
+* https://github.com/xobb1t/Sublime-AdvancedNewFile (create new files faster)
+* https://github.com/kemayo/sublime-text-2-git (git commands)
+* https://github.com/facelessuser/ExportHtml (provides printing)
+* https://github.com/dz0ny/LiveReload-sublimetext2 (live reload browser)
+* https://github.com/bgreenlee/sublime-github (github gists and more)
+* https://github.com/virtix/sublime-text-2-mxunit (mxunit testing)
 
 These packages require manual installation
 
-* https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
+* https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher (cfml documentation)
 
 ##License
 Copyright (c) 2012

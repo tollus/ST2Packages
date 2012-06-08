@@ -9,12 +9,15 @@
 
 	    /****** COLDFUSION KEYS ******/
 
-	{ "keys": ["alt+shift+e"], "command": "insert_snippet", "args": {"name": "Packages/User/Snippets/Coldfusion/htmleditformat.sublime-snippet"}, "context":
-	   [
-	      { "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
-	   ]},
-	{ "keys": ["alt+shift+c"], "command": "insert_snippet", "args": {"name": "Packages/User/Snippets/Coldfusion/convert_tag_to_module.sublime-snippet"}, "context":
-	   [
-	      { "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
-	   ]}
+	{ "keys": ["alt+shift+e"], "command": "insert_snippet",
+		"args": {"name": "Packages/User/Snippets/Coldfusion/htmleditformat.sublime-snippet"}, "context":
+	   	[
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{ "keys": ["alt+shift+c"], "command": "insert_snippet",
+		"args": {"name": "Packages/User/Snippets/Coldfusion/convert_tag_to_module.sublime-snippet"}, "context":
+	   	[
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" },
+       		{ "key": "selection_empty", "operator": "equal", "operand": false }
+	   	]}
 ]
