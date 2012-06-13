@@ -20,6 +20,59 @@
 	<key>patterns</key>
 	<array>
 
+		<dict>
+			<key>begin</key>
+			<string>(&lt;/?)(?i:(li|dd|dl|dt)|(div)|(fieldset|form|frame|frameset)|(h1|h2|h3|h4|h5|h6))\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.inline.list.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.block.div.html</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.block.form.html</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.inline.header.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.any.html</string>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+			</array>
+		</dict>
+
+
 		<!-- CFSCRIPT -->
 		<dict>
 			<key>begin</key>
@@ -29,7 +82,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -39,17 +92,15 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<!--
-			should decorate matches but may mess up highlighting
-			meta.tag.block.cfscript.cfml
-			-->
+			<key>contentName</key>
 			<string>source.cfscript.embedded.cfml</string>
+			<key>name</key>
+			<string>meta.tag.block.cfscript.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -60,7 +111,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.cfml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -87,7 +138,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -102,7 +153,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.ctml</string>
+					<string>punctuation.definition.tag.cf.end.ctml</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -149,6 +200,8 @@
 				</dict>
 			</dict>
 			<key>name</key>
+			<string>meta.tag.script.any.html</string>
+			<key>contentName</key>
 			<string>source.js.embedded.html</string>
 			<key>patterns</key>
 			<array>
@@ -230,7 +283,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.start.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -240,17 +293,13 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
-			<!--
-			should decorate matches but may mess up highlighting
-			meta.tag.block.cfquery.cfml
-			-->
-			<string>source.sql.embedded.cfml</string>
+			<string>meta.tag.block.cfquery.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -269,9 +318,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.cfml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>source.sql.embedded.cfml</string>
 					<key>end</key>
 					<string>(?=&lt;/(?i:cfquery))</string>
 					<key>patterns</key>
@@ -288,7 +339,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.tag.begin.cfml</string>
+									<string>punctuation.definition.tag.cf.begin.cfml</string>
 								</dict>
 								<key>2</key>
 								<dict>
@@ -303,7 +354,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.tag.end.cfml</string>
+									<string>punctuation.definition.tag.cf.end.cfml</string>
 								</dict>
 							</dict>
 							<key>name</key>
@@ -315,10 +366,6 @@
 									<string>#tag-stuff</string>
 								</dict>
 							</array>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#nest-hash</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -338,7 +385,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.start.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -358,11 +405,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cfml source.cfscript.embedded.cfml</string>
+			<string>meta.tag.inline.cfml</string>
+			<key>contentName</key>
+			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -389,7 +438,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -404,7 +453,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -439,7 +488,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.cfml</string>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -454,7 +503,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.ctml</string>
+					<string>punctuation.definition.tag.cf.end.ctml</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -466,13 +515,6 @@
 					<string>#tag-stuff</string>
 				</dict>
 			</array>
-		</dict>
-
-
-
-		<dict>
-			<key>include</key>
-			<string>#nest-hash</string>
 		</dict>
 
 		<dict>
@@ -504,6 +546,10 @@
 					<key>include</key>
 					<string>#exception-handling</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#cfoutput</string>
+				</dict>
 			</array>
 		</dict>
 
@@ -525,7 +571,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.begin.cfml</string>
+							<string>punctuation.definition.tag.cf.begin.cfml</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -550,7 +596,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.ctml</string>
+							<string>punctuation.definition.tag.cf.end.ctml</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -575,7 +621,7 @@
 					<string>(?x)
 						(&lt;/?)
 						(?i:
-							(cftry)|(cfcatch)|(cflock)|(cffinally)|(cferror)|(cfrethrow)|(cfthrow)
+							(cftry)|(cfcatch)|(cflock)|(cffinally|cferror|cfrethrow|cfthrow)
 						)
 						\b
 					</string>
@@ -584,7 +630,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.begin.cfml</string>
+							<string>punctuation.definition.tag.cf.begin.cfml</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -614,7 +660,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.ctml</string>
+							<string>punctuation.definition.tag.cf.end.ctml</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -643,7 +689,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.begin.cfml</string>
+							<string>punctuation.definition.tag.cf.begin.cfml</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -658,11 +704,13 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.cfml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.tag.block.conditional.cfml</string>
+					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -680,7 +728,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.start.cfml</string>
+							<string>punctuation.definition.tag.cf.begin.cfml</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -695,7 +743,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.cfml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -712,6 +760,68 @@
 			</array>
 		</dict>
 		<!-- /conditionals -->
+
+		<!-- cfoutput -->
+		<key>cfoutput</key>
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:cfoutput))\b(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.output.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
+			<key>name</key>
+			<string>meta.tag.cfoutput.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cfoutput))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.cfm</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<!-- /cfoutput -->
 
 <!-- /ends embedded tags -->
 <!-- ************************************************************************** -->
@@ -1084,7 +1194,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(#)(?=.*#)</string>
+					<string>(#)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1104,7 +1214,9 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.interpolated.hash.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.name.interpolated.hash.cfml</string>
+					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>

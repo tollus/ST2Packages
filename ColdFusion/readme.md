@@ -39,51 +39,53 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 Some packages will override key bindings. If you have problems with a specific key shortcut,
 you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
 
-You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses.
+You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses and their corresponding command to the console pane.
 
 <table>
     <tr>
         <td>
-<kbd>shift</kbd>+<kbd>3</kbd> <code>#SELECTION#</code>
+<kbd>⇧</kbd>+<kbd>#</kbd> <code>#SELECTION#</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> <code>&lt;cfoutput&gt;SELECTION&lt;/cfoutput&gt;</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>O</kbd> <code>&lt;cfoutput&gt;SELECTION&lt;/cfoutput&gt;</code>
         </td>
     </tr>
     <tr>
         <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>#</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
         </td>
         <td>
-<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> <code>cfml comment</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> <code>javadoc comment</code>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd> <code>&lt;cfabort /&gt;</code>
         </td>
     </tr>
     <tr>
         <td>
-<kbd>alt</kbd>+<kbd>enter</kbd> <code>terminates statement; adds new line</code>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>R</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>/</kbd> <code>block comment (cfml/cfscript) </code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>/</kbd> <code>javadoc comment</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Alt</kbd>+<kbd>↩</kbd> <code>terminates statement (cfscript)</code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
         </td>
     </tr>
 </table>
 
+
+Many more key bindings are available via Sublime ```Preferences > Key Bindings - Default```
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
@@ -106,9 +108,43 @@ The following list contains snippets repositories made available by ColdFusion c
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
 To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select ```Preferences > Browse Packages...``` from the Sublime Text 2 menu).
+##Custom Themes
+If you'd like to customize your favorite theme for ColdFusion support, you can use the ```entity.name.tag.cf``` scope in your tmTheme file.
+For example the following definition will use the color ```#C87551``` for all ColdFusion tags:
+```
+<!-- this will color ColdFusion tag &lt; &gt; symbols -->
+<dict>
+    <key>name</key>
+    <string>Punctuation</string>
+    <key>scope</key>
+    <string>punctuation.definition.tag.cf</string>
+    <key>settings</key>
+    <dict>
+        <key>fontStyle</key>
+        <string></string>
+        <key>foreground</key>
+        <string>#C87551</string>
+    </dict>
+</dict>
+<!-- this will color ColdFusion tags -->
+<dict>
+    <key>name</key>
+    <string>Entity</string>
+    <key>scope</key>
+    <string>entity.name.tag.cf</string>
+    <key>settings</key>
+    <dict>
+        <key>fontStyle</key>
+        <string></string>
+        <key>foreground</key>
+        <string>#C87551</string>
+    </dict>
+</dict>
+```
+You can use <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> to get the scope name at the cursor position for more theme customizing .
 
 ##Additional Packages
-Some additional packages you might want to check out (these packages are all available through Package Control):
+Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
 
 * https://github.com/BoundInCode/AutoFileName (provides file auto-complete)
 * https://github.com/weslly/ColorPicker (choose a color and get the hex code)
