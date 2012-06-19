@@ -1,7 +1,8 @@
 [
 	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-   { "keys": ["alt+w"], "command": "toggle_setting",
+    { "keys": ["alt+w"], "command": "toggle_setting",
 	    "args": { "setting": "word_wrap" } },
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": true } },
 
 	    /****** HTML SNIPPETS ******/
 
@@ -15,8 +16,20 @@
 	    /****** COLDFUSION SNIPPETS ******/
 
 	{
-		"keys": ["alt+shift+e"], "command": "insert_snippet",
-		"args": {"contents": "HtmlEditFormat(${0:$SELECTION})"},
+		"keys": ["alt+shift+e","alt+shift+e"], "command": "insert_snippet",
+		"args": {"contents": "Request.HtmlFormatCheckBlank($SELECTION)$0"},
+		"context": [
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{
+		"keys": ["alt+shift+e","alt+shift+r"], "command": "insert_snippet",
+		"args": {"contents": "Request.HtmlFormatCheckBlank($SELECTION, \"${1:Text When Blank}\")$0"},
+		"context": [
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{
+		"keys": ["alt+shift+e","alt+shift+f"], "command": "insert_snippet",
+		"args": {"contents": "HtmlEditFormat($SELECTION)$0"},
 		"context": [
 	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
 	   	]},
