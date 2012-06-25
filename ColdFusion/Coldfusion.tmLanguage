@@ -20,58 +20,6 @@
 	<key>patterns</key>
 	<array>
 
-		<dict>
-			<key>begin</key>
-			<string>(&lt;/?)(?i:(li|dd|dl|dt)|(div)|(fieldset|form|frame|frameset)|(h1|h2|h3|h4|h5|h6))\b</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.inline.list.html</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.div.html</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.form.html</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.inline.header.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.any.html</string>
-			<key>end</key>
-			<string>(&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-			</dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-			</array>
-		</dict>
-
 
 		<!-- CFSCRIPT -->
 		<dict>
@@ -100,7 +48,7 @@
 			<key>contentName</key>
 			<string>source.cfscript.embedded.cfml</string>
 			<key>name</key>
-			<string>meta.tag.block.cfscript.cfml</string>
+			<string>meta.tag.block.cf.script.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -157,7 +105,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.block.function.cfml</string>
+			<string>meta.tag.block.cf.function.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -200,7 +148,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.script.any.html</string>
+			<string>meta.tag.block.cf.script.html</string>
 			<key>contentName</key>
 			<string>source.js.embedded.html</string>
 			<key>patterns</key>
@@ -299,7 +247,7 @@
 			<key>end</key>
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
-			<string>meta.tag.block.cfquery.cfml</string>
+			<string>meta.tag.block.cf.query.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -358,7 +306,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.tag.inline.cfml</string>
+							<string>meta.tag.inline.cf.query-param.cfml</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -409,7 +357,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cfml</string>
+			<string>meta.tag.inline.cf.any.cfml</string>
 			<key>contentName</key>
 			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
@@ -457,7 +405,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cfml</string>
+			<string>meta.tag.inline.cf.any.ml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -507,7 +455,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.block.other.cfml</string>
+			<string>meta.tag.block.cf.other.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -600,7 +548,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.flow-control.cfml</string>
+					<string>meta.tag.block.cf.flow-control.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -664,7 +612,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.exceptions.cfml</string>
+					<string>meta.tag.block.cf.exceptions.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -708,7 +656,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.conditional.cfml</string>
+					<string>meta.tag.block.cf.conditional.cfml</string>
 					<key>contentName</key>
 					<string>source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
@@ -747,7 +695,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.tag.block.cf.conditional.cfml source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -768,6 +716,11 @@
 			<string>(?:^\s+)?(&lt;)((?i:cfoutput))\b(?![^&gt;]*/&gt;)</string>
 			<key>captures</key>
 			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.block.cf.output.cfml</string>
+				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
@@ -786,19 +739,33 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<string>meta.tag.cfoutput.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
+					<key>begin</key>
+					<string>(?&lt;=cfoutput)\s</string>
+					<key>end</key>
+					<string>(?=&gt;)</string>
+					<key>name</key>
+					<string>meta.tag.block.cf.output.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.block.cf.output.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
@@ -837,7 +804,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.attribute-name.name.cfml</string>
+					<string>entity.other.attribute-name.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -931,7 +898,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.attribute-name.name.cfml</string>
+					<string>entity.other.attribute-name.cfml</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -1207,6 +1174,11 @@
 					<string>(#)</string>
 					<key>endCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>source.cfscript.embedded.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>

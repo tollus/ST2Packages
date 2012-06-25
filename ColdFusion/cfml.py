@@ -312,19 +312,17 @@ cften = [
 class CFMLAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         if not view.match_selector(locations[0],
-                "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
-            return []
+                "text.html.cfm - source - meta, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
+            return
 
         s = sublime.load_settings('ColdFusion.sublime-settings')
-        if s.get("disable_default_tag_completions"):
-             return []
+        if not s.get("verbose_tag_completions"):
+             return
 
-        # Do not trigger if we are in a tag or string
+        # Do not trigger if we are in a tag or string or comment
         pt = locations[0] - len(prefix) - 1
-        if 'tag' in view.scope_name(pt):
-            return []
-        if 'string' in view.scope_name(pt):
-            return []
+        if any(s in view.scope_name(pt) for s in ["tag","string","comment"]):
+            return
 
         _completions = []
         _completions.extend(cften)

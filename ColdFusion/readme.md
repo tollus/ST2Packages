@@ -1,6 +1,7 @@
 # ColdFusion Package for Sublime Text 2
 
 ### What's New
+* Added Tag Attribute completions (6/24/12)
 * Added Command ```ColdFusion: Insert CFlib UDF``` (6/2/12)
 
 ### Features
@@ -112,12 +113,11 @@ To install snippets just put the ```.sublime-snippet``` files in your Packages/U
 If you'd like to customize your favorite theme for ColdFusion support, you can use the ```entity.name.tag.cf``` scope in your tmTheme file.
 For example the following definition will use the color ```#C87551``` for all ColdFusion tags:
 ```
-<!-- this will color ColdFusion tag &lt; &gt; symbols -->
 <dict>
     <key>name</key>
-    <string>Punctuation</string>
+    <string>Meta</string>
     <key>scope</key>
-    <string>punctuation.definition.tag.cf</string>
+    <string>meta.tag.block.cf, meta.tag.inline.cf</string>
     <key>settings</key>
     <dict>
         <key>fontStyle</key>
@@ -126,7 +126,7 @@ For example the following definition will use the color ```#C87551``` for all Co
         <string>#C87551</string>
     </dict>
 </dict>
-<!-- this will color ColdFusion tags -->
+<!-- this will color ColdFusion tag name -->
 <dict>
     <key>name</key>
     <string>Entity</string>
@@ -142,6 +142,17 @@ For example the following definition will use the color ```#C87551``` for all Co
 </dict>
 ```
 You can use <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> to get the scope name at the cursor position for more theme customizing .
+
+##Development Branch
+To help test the development branch you can install it by dowloading the zip and copying the contents to the Packages/ColdFusion folder.
+
+
+Alternatively, you can use git to install the ColdFusion package as mentioned above and switch to the development tracking branch using:
+
+```
+git checkout development
+```
+
 
 ##Additional Packages
 Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
