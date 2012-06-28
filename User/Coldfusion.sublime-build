@@ -1,5 +1,0 @@
-{
-	"cmd": ["C:\\dev\\ColdFusion9\\bin\\cfcompile.bat","$file"],
-	"file_regex": "Error [0-9]+: (.*?)\\s+(.*?on line [0-9]+ at column [0-9]+)",
-	"selector": "text.html.cfm"
-}
