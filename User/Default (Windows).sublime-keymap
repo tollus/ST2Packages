@@ -4,6 +4,9 @@
 	    "args": { "setting": "word_wrap" } },
 	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": true } },
 
+	/* ZenCoding overrides this key combo, re-enable it */
+    { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+
 	    /****** HTML SNIPPETS ******/
 
 	{
