@@ -327,7 +327,7 @@
 		<!-- CFSET|CFRETURN -->
 		<dict>
 			<key>begin</key>
-			<string>(&lt;)(?i:(cfset)|(cfreturn))\b</string>
+			<string>(&lt;)(?i:(cfset|cfreturn)|(cfargument))\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -341,6 +341,11 @@
 					<string>entity.name.tag.cf.inline.declaration.cfml</string>
 				</dict>
 				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.argument.cfml</string>
+				</dict>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.tag.cf.inline.other.cfml</string>
@@ -376,8 +381,11 @@
 			<string>(?x)
 				(&lt;)
 					(?i:
-						(cf((location)|(forward)|(import)|(param)|(break)
-							|(abort)|(flush)|(setting)))
+						(cf(location|forward|import|param|break|abort|flush
+							|setting|test|dump|content|include|catch|continue
+							|file|log|object|invoke|throw|property|htmlhead
+							|header)
+						)
 						\b
 					)
 			</string>
@@ -405,7 +413,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cf.any.ml</string>
+			<string>meta.tag.inline.cf.any.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -695,7 +703,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.cf.conditional.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.tag.inline.cf.conditional.cfml source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
