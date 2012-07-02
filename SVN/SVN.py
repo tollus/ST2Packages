@@ -82,12 +82,15 @@ for mod in mods_load_order:
     if mod in reload_mods:
         reload(sys.modules[mod])
 
-try:
-    # First time installs sometimes suffer from import errors because the package
-    # has not fully been extracted yet
-    from sublimesvn.commands import SvnAddInteractiveCommand
-except (ImportError):
-    time.sleep(0.2)
+succeeded_import = False
+while not succeeded_import:
+    try:
+        # First time installs sometimes suffer from import errors because the package
+        # has not fully been extracted yet
+        from sublimesvn.commands import SvnAddInteractiveCommand
+        succeeded_import = True
+    except (ImportError):
+        time.sleep(0.2)
 
 from sublimesvn.commands import (SvnAddInteractiveCommand, SvnAddCommand,
     SvnBlameCommand, SvnBranchCommand, SvnChangelistAddCommand,
@@ -106,7 +109,7 @@ from sublimesvn.commands import (SvnAddInteractiveCommand, SvnAddCommand,
     SvnFileDiffCommand, SvnRevertInteractiveCommand, SvnWcLogCommand,
     SvnFileLogCommand, SvnFileCommitCommand, SvnWcCommitCommand,
     SvnFileStatusCommand, SvnUpdateIncludingExternalsCommand,
-    SvnRemoteDiffCommand)
+    SvnRemoteDiffCommand, SvnUnlockInteractiveCommand)
 from sublimesvn.listeners import (SvnSaveListener, SvnMessageSaveListener,
     SvnFocusListener)
 from sublimesvn.status import (StatusCache)

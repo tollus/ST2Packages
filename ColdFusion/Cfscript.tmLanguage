@@ -22,6 +22,15 @@
 
         <dict>
             <key>include</key>
+            <string>#component-operators</string>
+        </dict>
+        <dict>
+            <key>include</key>
+            <string>#tag-operators</string>
+        </dict>
+
+        <dict>
+            <key>include</key>
             <string>#cfscript-code</string>
         </dict>
     </array>
@@ -35,11 +44,7 @@
             <array>
                 <dict>
                     <key>include</key>
-                    <string>#component-operators</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#tag-operators</string>
+                    <string>#brackets</string>
                 </dict>
                 <dict>
                     <key>include</key>
@@ -237,6 +242,63 @@
         </dict>
         <!-- / end parameters -->
 
+        <!-- brackets -->
+        <key>brackets</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>begin</key>
+                    <string>([\w]+)?\s*(\[)</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.set.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.bracket-begin.cfscript</string>
+                        </dict>
+                     </dict>
+                    <key>end</key>
+                    <string>\]</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.bracket-end.cfscript</string>
+                        </dict>
+                     </dict>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>#strings</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>,</string>
+                            <key>name</key>
+                            <string>punctuation.definition.seperator.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>\w+</string>
+                            <key>name</key>
+                            <string>variable.other.index.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>$self</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
 
         <!-- tag-operators -->
         <key>tag-operators</key>
@@ -361,6 +423,10 @@
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
                             <string>entity.tag.name.operator-attribute.other.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>#comments</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -822,7 +888,7 @@
                     |getdirectoryfrompath|getencoding|getexception|getfilefrompath|getfileinfo
                     |getfunctioncalledname|getfunctionlist|getgatewayhelper|gethttprequestdata|gethttptimestring
                     |getk2serverdoccount|getk2serverdoccountlimit|getlocale|getlocaledisplayname|getlocalhostip
-                    |getmetadata|getmetricdata|getpagecontext|getprinterinfo|getprinterlist|getprofilesections
+                    |getmetadata|getmetricdata|getpagecontext|getrequest|getrequesturi|getprinterinfo|getprinterlist|getprofilesections
                     |getprofilestring|getreadableimageformats|getsoaprequest|getsoaprequestheader|getsoapresponse
                     |getsoapresponseheader|gettempdirectory|gettempfile|gettemplatepath|gettickcount
                     |gettimezoneinfo|gettoken|getuserroles|getvfsmetadata|getwriteableimageformats|hash|hour
