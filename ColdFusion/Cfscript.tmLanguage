@@ -162,6 +162,10 @@
                 </dict>
                 <dict>
                     <key>include</key>
+                    <string>#function-properties</string>
+                </dict>
+                <dict>
+                    <key>include</key>
                     <string>#cfscript-code</string>
                 </dict>
             </array>
@@ -241,6 +245,27 @@
             </array>
         </dict>
         <!-- / end parameters -->
+
+        <!-- optional function properties -->
+        <key>function-properties</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:output)</string>
+                    <key>name</key>
+                    <string>entity.other.attribute-name.output.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b([\w]+)</string>
+                    <key>name</key>
+                    <string>entity.other.attribute-name.any.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- / end optional function properties -->
 
         <!-- brackets -->
         <key>brackets</key>
@@ -801,7 +826,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(==|!=|&lt;=|&gt;=|&lt;|&gt;)</string>
+                    <string>(==|!|!=|&lt;=|&gt;=|&lt;|&gt;)</string>
                     <key>name</key>
                     <string>keyword.operator.comparison.cfscript</string>
                 </dict>
