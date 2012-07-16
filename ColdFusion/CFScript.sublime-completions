@@ -1,5 +1,5 @@
 {
-    "scope": "source.cfscript - source.sql - text.html.cfm - string - meta - comment,source.cfscript.embedded.cfml - string, source.sql",
+    "scope": "meta.name.interpolated.hash - string, source.cfscript - source.sql - text.html.cfm - string - meta - comment, source.cfscript.embedded.cfml - string, source.sql",
     "completions":
     [
 
@@ -8,11 +8,9 @@
 
         { "trigger": "true", "contents": "true"},
         { "trigger": "false", "contents": "false"},
+
         { "trigger": "TRUE", "contents": "TRUE"},
         { "trigger": "FALSE", "contents": "FALSE"},
-
-        { "trigger": "required", "contents": "required "},
-        { "trigger": "REQUIRED", "contents": "REQUIRED "},
 
         { "trigger": "return", "contents": "return "},
         { "trigger": "RETURN", "contents": "RETURN "},
@@ -57,8 +55,11 @@
         { "trigger": "thread", "contents": "thread"},
         { "trigger": "THREAD", "contents": "THREAD"},
 
+        { "trigger": "url", "contents": "url"},
         { "trigger": "URL", "contents": "URL"},
+
         { "trigger": "this", "contents": "this"},
+        { "trigger": "THIS", "contents": "THIS"},
 
         { "trigger": "variables", "contents": "variables"},
         { "trigger": "VARIABLES", "contents": "VARIABLES"},
@@ -340,6 +341,7 @@
         { "trigger": "valueList\tfn. (cfscript)", "contents": "valueList(${1:${2:column}${3:, [delimiter]}})"},
         { "trigger": "week\tfn. (cfscript)", "contents": "week(${1:${2:date}})"},
         { "trigger": "wrap\tfn. (cfscript)", "contents": "wrap(${1:\"${2:string}\", ${3:limit}${4:, [strip]}})"},
+        { "trigger": "writeDump\tfn. (cfscript)", "contents": "writeDump(${1:var})"},
         { "trigger": "writeOutput\tfn. (cfscript)", "contents": "writeOutput(${1:\"${2:string}\"})"},
         { "trigger": "xmlChildPos\tfn. (cfscript)", "contents": "xmlChildPos(${1:${2:elem}, \"${3:childname}\", ${4:n}})"},
         { "trigger": "xmlElemNew\tfn. (cfscript)", "contents": "xmlElemNew(${1:${2:xmlobj}${3:, [namespace]}, \"${4:childname}\"})"},

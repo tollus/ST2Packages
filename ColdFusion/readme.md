@@ -155,6 +155,7 @@ git checkout development
 ##Additional Packages
 Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
 
+* http://net.tutsplus.com/articles/news/introducing-nettuts-fetch/ (highly recommended)
 * https://github.com/BoundInCode/AutoFileName (provides file auto-complete)
 * https://github.com/weslly/ColorPicker (choose a color and get the hex code)
 * https://github.com/xobb1t/Sublime-AdvancedNewFile (create new files faster)
@@ -163,9 +164,11 @@ Some additional packages you might want to check out  - they are all available t
 * https://github.com/dz0ny/LiveReload-sublimetext2 (live reload browser)
 * https://github.com/bgreenlee/sublime-github (github gists and more)
 * https://github.com/virtix/sublime-text-2-mxunit (mxunit testing)
+* https://github.com/seancoyne/farcry-sublimetext (farcry snippets)
 
 These packages require manual installation
 
+* https://github.com/adampresley/sublime-cf-js-log-finder (debug output finder)
 * https://github.com/timsayshey/Sublime-Text-CFWheels (cfwheels plugin)
 * https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher (cfml documentation)
 
