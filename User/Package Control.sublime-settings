@@ -1,12 +1,11 @@
 {
-	"auto_upgrade_last_run": 1343221504,
+	"auto_upgrade_last_run": 1343653885,
 	"installed_packages":
 	[
 		"ColdFusion",
 		"Local History",
 		"Package Control",
 		"SideBarEnhancements",
-		"SVN",
 		"Tortoise",
 		"ZenCoding"
 	]
