@@ -1,9 +1,10 @@
 {
-	"auto_upgrade_last_run": 1343653885,
+	"auto_upgrade_last_run": 1344536464,
 	"installed_packages":
 	[
 		"ColdFusion",
 		"Local History",
+		"Nettuts+ Fetch",
 		"Package Control",
 		"SideBarEnhancements",
 		"Tortoise",

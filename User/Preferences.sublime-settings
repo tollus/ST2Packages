@@ -10,5 +10,6 @@
 	],
 	"overlay_scroll_bars": "enabled",
 	"shift_tab_unindent": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"preview_on_click": false
 }
