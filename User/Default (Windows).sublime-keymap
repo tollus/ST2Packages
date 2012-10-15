@@ -43,6 +43,18 @@
 	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
 	   	]},
 	{
+		"keys": ["alt+shift+e","alt+shift+u"], "command": "insert_snippet",
+		"args": {"contents": "URLEncodedFormat($SELECTION)$0"},
+		"context": [
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{
+		"keys": ["alt+shift+e","alt+shift+j"], "command": "insert_snippet",
+		"args": {"contents": "Request.JSFix($SELECTION)$0"},
+		"context": [
+	      	{ "key": "selector", "operator": "equal", "operand": "text.html.cfm" }
+	   	]},
+	{
 		"keys": ["alt+shift+c"], "command": "insert_snippet",
 		"args": {"contents": "cfmodule template=\"$0$SELECTION.cfm\""},
 		"context": [
