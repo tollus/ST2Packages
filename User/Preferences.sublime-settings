@@ -1,17 +1,17 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_delay": 500,
-	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"color_scheme": "Packages/textmate-solarized/Solarized (dark).tmTheme",
 	"detect_indentation": false,
 	"font_size": 10,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"minimap_scroll_to_clicked_text": false,
 	"overlay_scroll_bars": "enabled",
 	"preview_on_click": false,
 	"shift_tab_unindent": true,
-	"trim_trailing_white_space_on_save": true,
-	"highlight_modified_tabs": true,
-	"minimap_scroll_to_clicked_text": false
+	"trim_trailing_white_space_on_save": true
 }
