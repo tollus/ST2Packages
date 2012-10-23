@@ -517,7 +517,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.tag.name.operator-attribute.other.cfscript</string>
+                            <string>entity.name.other.attribute-name.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -942,7 +942,6 @@
         <!-- / keywords -->
 
         <!-- function-call -->
-        <!-- TODO: add all language functions -->
         <key>function-call</key>
         <dict>
             <key>begin</key>
@@ -1063,6 +1062,12 @@
                     <string>,</string>
                     <key>name</key>
                     <string>punctuation.definition.seperator.arguments.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(?i:(\w+)\s*(?=\=))</string>
+                    <key>name</key>
+                    <string>entity.name.other.method-parameter.cfscript</string>
                 </dict>
                 <!-- issue #93 cfml comments in
                  source.embedded.cfscript tags function calls (cfset/cfreturn) -->
