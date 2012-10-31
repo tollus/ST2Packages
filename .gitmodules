@@ -1,0 +1,6 @@
+[submodule "JumpTo"]
+	path = JumpTo
+	url = https://github.com/JonasPf/JumpTo.git
+[submodule "textmate-solarized"]
+	path = textmate-solarized
+	url = https://github.com/deplorableword/textmate-solarized
