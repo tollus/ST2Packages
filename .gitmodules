@@ -4,3 +4,9 @@
 [submodule "textmate-solarized"]
 	path = textmate-solarized
 	url = https://github.com/deplorableword/textmate-solarized
+[submodule "CfQuickDocs"]
+	path = CfQuickDocs
+	url = https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
+[submodule "SublimeText2CfQuickDocsLauncher"]
+	path = SublimeText2CfQuickDocsLauncher
+	url = https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
