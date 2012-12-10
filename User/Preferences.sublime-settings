@@ -3,12 +3,10 @@
 	"auto_complete_delay": 500,
 	"color_scheme": "Packages/textmate-solarized/Solarized (dark).tmTheme",
 	"detect_indentation": false,
-	"font_size": 10,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Emmet"
+		"Vintage"
 	],
 	"minimap_scroll_to_clicked_text": false,
 	"overlay_scroll_bars": "enabled",
